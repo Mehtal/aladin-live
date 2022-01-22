@@ -1,6 +1,6 @@
 *.pyc
 *.pyo
-/static/
+
 *.sqlite3
 *.old
 *.zip
