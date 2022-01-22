@@ -4,22 +4,21 @@
 
 
 {% block content %}
-<div class="w-100 h-100" style="background-image:url({% static 'img/bg1.jpg' %}) ">
 <div class="row pt-5">
 	
 	<h1 class="animate-charcter mb-5 text-center" id="text2" style="
     z-index: 3;
 ">{{ object.name }}</h1>
 </div>
-
+<div class="container">
 <div class="row">
-	<div class="container p-5">
+	
 	{% for video in object.videos.all %}
-	<div class="col-md-4">
+	<div class="col-12 col-md-4 my-5">
 		 <div class="card shadow-sm">
            <iframe class="embed-responsive-item" src="{{ video.link }}" allowfullscreen></iframe>
 
-            <div class="card-body">
+            <div class="card-body d-flex justify-content-between">
               <p class="card-text">{{ video.title }}</p>
              
                 <small class="text-muted">{{video.created}}</small>

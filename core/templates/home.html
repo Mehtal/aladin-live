@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<div class="container-fluid d-flex w-100 h-100 text-center main-wrapper text-white" style="background-image:url({% static 'img/bg1.jpg' %}) ">
+<div class="container text-center text-white">
 <div class="fixed-top">		{% if messages %}
     {% for message in messages %}
     {% if message.tags == "error" %}
@@ -17,12 +17,13 @@
     {% endif %}
     {% endfor %}
 {% endif %}</div>
+<header class=""></header>
 <div class="cover-container w-100 h-100 p-3 grid-center">
 
   <main class="px-3 ">
     <h1 class ="d-none"id="text1"></h1>
     <h1 class="animate-charcter mb-5" id="text2"></h1>
-    <p class="text-secondary">à cause de covid l'école a décidé d'ouvrir une plateforme en ligne pour nos élèves qui ne peuvent pas y assister afin qu'ils ne manquent pas leurs cours</p>
+    <p class="text-secondary">due to covid the school has decided to open an online platform for our students who cannot attend so that they do not miss their lessons</p>
     <form method="post">{% csrf_token %} <div class="input-group my-2">
       <input name="code" required id="id_code" type="text" class="form-control" placeholder="insérer Code d'eleve ici" aria-label="" >
       <div class="input-group-append">
@@ -30,15 +31,45 @@
       </div>
     </div></form>
   </main>
+  
+    </div><hr/>
+ <section class="container">
+    <div class="row my-5">
+     <h1 class="ml1">
+       <span class="text-wrapper">
+         <span class="line line1"></span>
+         <span class="letters">VIDEO LIBRARY</span>
+         <span class="line line2"></span>
+       </span>
+     </h1>
+
+     
+    </div>
+    <div class="row  justify-content-center  ">
+      
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 " >GS</a></div>
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">1AP</a></div>
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">2AP</a></div>
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">3AP</a></div>
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4">4AP</a></div>
+      <div class="col-12 col-md-4 my-3">
+      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4">5AP</a></div>
+    </div>
+     </section>
 
 
-</div>
-
-</div>
+</div><hr/>
+<footer class="p-5"></footer>
 {% endblock content %}
 
 
 {% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
  <script type="text/javascript">
   	const elts = {
   	    text1: document.getElementById("text1"),
@@ -122,5 +153,31 @@
 
   	animate();
 
+  </script>
+  <script type="text/javascript">
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml1 .letter',
+        scale: [0.3,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 600,
+        delay: (el, i) => 70 * (i+1)
+      }).add({
+        targets: '.ml1 .line',
+        scaleX: [0,1],
+        opacity: [0.5,1],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=875',
+        delay: (el, i, l) => 80 * (l - i)
+      }).add({
+        targets: '.ml1',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
   </script>
 {% endblock js%}
