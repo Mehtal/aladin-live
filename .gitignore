@@ -5,6 +5,4 @@
 *.old
 *.zip
 *.log
-/core/migrations/
-/migrations/
-/migrations/*.*
+*/migrations/
