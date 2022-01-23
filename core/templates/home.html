@@ -46,19 +46,10 @@
      
     </div>
     <div class="row  justify-content-center  ">
-      
+      {% for obj in object_list %}
       <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 " >GS</a></div>
-      <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">1AP</a></div>
-      <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">2AP</a></div>
-      <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4 ">3AP</a></div>
-      <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4">4AP</a></div>
-      <div class="col-12 col-md-4 my-3">
-      <a href=""class="btn btn-outline-primary btn-lg col-12 p-4">5AP</a></div>
+      <a href="{% url 'level-detail' obj.id %} "class="btn btn-outline-primary btn-lg col-12 p-4 " >{{obj.name}}</a></div>
+      {% endfor %}
     </div>
      </section>
 
