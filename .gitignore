@@ -1,6 +1,7 @@
 *.pyc
 *.pyo
-
+/static/root/
+/tmp/
 *.sqlite3
 *.old
 *.zip
