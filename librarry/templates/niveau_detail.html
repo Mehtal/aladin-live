@@ -27,6 +27,14 @@
           </div>
           {% endfor %}
 	</div>
-	
-</div></div></div>
+	<hr>
+<div class="row">
+	<div class="col-12"><h2 class="text-center text-white"> attachments </h2></div>
+	{% for obj in object.files.all %}
+	<div class="col-md-6 my-5">
+		<p><span class="badge bg-danger">{{obj.module}}</span> - <a href="{{obj.upload.url}}">{{ obj.name }}</a></p>
+	</div>
+	{% endfor %}
+	</div>
+</div>
 {% endblock %}
