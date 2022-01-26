@@ -29,11 +29,11 @@
 	</div>
 	<hr>
 <div class="row">
-	<div class="col-12"><h1 class="text-center text-white"> attachments </h1></div>
+	<div class="col-12"><h1 class="text-center text-white"> Telechargment </h1></div>
 	{% for obj in object.files.all %}
-	<div class="col-12">
+	<div class="col-12" style="background: rgba(0,0,0,0.5);">
 		<h2><span class="badge bg-danger">{{obj.module}}</span> - <a href="{{obj.upload.url}}">{{ obj.name }}</a></h2>
-	</div>
+	</div><hr>
 	{% endfor %}
 	</div>
 </div>
