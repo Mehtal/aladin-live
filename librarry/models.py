@@ -5,12 +5,13 @@ from django.urls import reverse
 
 class Niveau(models.Model):
     name = models.CharField(max_length=50)
+    slug = models.SlugField(null=True)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("level-detail", args[str(self.id)])
+        return reverse("level-detail", kwargs={"slug": self.slug})
 
 
 class Module(models.Model):
@@ -31,6 +32,9 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering: ['-created']
 
 
 class FileUpload(models.Model):
