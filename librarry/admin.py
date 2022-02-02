@@ -7,4 +7,3 @@ admin.site.register(Niveau)
 admin.site.register(Video)
 admin.site.register(Module)
 admin.site.register(FileUpload)
-
