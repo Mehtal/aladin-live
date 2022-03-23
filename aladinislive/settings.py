@@ -24,9 +24,10 @@ SECRET_KEY = os.environ.get("key")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("debug")
-
-ALLOWED_HOSTS = os.environ.get("host")
+#DEBUG = os.environ.get("debug")
+DEBUG = False
+#ALLOWED_HOSTS = os.environ.get("host")
+ALLOWED_HOSTS = ["ecole-aladin.live","www.ecole-aladin.live","https://ecole-aladin.live","127.0.0.1"]
 
 
 
