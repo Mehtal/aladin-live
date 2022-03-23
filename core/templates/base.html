@@ -5,12 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 	<title>{% block title %}Ecole Aladin Live{% endblock %}</title>
-
+	<link  href="{% static 'fonts/NotoNaskhArabic-Regular.ttf' %}">
 	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
 	<link href="{% static 'css/main.css' %}" rel="stylesheet" />
 
 </head>
 <body class="main-wrapper" style="background-image:url({% static 'img/bg1.jpg' %});">
+	<nav class="container mt-3" dir="rtl">
+		<div class="header d-flex justify-content-center">
+			<a class=" p-3" href="">الرئيسية</a>	
+			<a class=" p-3" href="">الملفات</a>
+			<a class=" p-3" href="">لائحة المتميزين</a>			
+		</div>
+	</nav>
   {% block content %}
   {% endblock content %}
 
