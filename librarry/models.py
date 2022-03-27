@@ -3,9 +3,18 @@ from django.urls import reverse
 # Create your models here.
 
 
+class SchoolYear(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f'{self.name}'
+
+
 class Niveau(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(null=True)
+    year = models.ForeignKey(SchoolYear, on_delete=models.CASCADE,
+                             related_name="niveaus", blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -53,15 +62,9 @@ class FileUpload(models.Model):
         return reverse("uploads", args[str(self.id)])
 
 
-class SchoolYear(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return f'{self.name}'
-
-
 class Exames(models.Model):
-    year = models.ForeignKey(SchoolYear, on_delete=models.CASCADE,)
+    year = models.ForeignKey(
+        SchoolYear, on_delete=models.CASCADE, related_name="exames")
     niveau = models.ForeignKey(
         Niveau, on_delete=models.CASCADE, related_name="exames")
     module = models.ForeignKey(

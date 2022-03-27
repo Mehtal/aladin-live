@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import home, broadcast_detail
-from librarry.views import NiveauDetail
+from librarry.views import NiveauDetail, SchoolYearDetail
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('broadcast/<int:id><str:code>',
          broadcast_detail, name="broadcast-detail"),
     path('<slug:slug>', NiveauDetail.as_view(), name="level-detail"),
+    path('schoolyear/<int:pk>', SchoolYearDetail.as_view(), name="school-year"),
     path('', home, name="home"),
 
 ]

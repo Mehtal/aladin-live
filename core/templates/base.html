@@ -14,8 +14,8 @@
 <body class="main-wrapper" style="background-image:url({% static 'img/bg1.jpg' %});">
 	<nav class="container mt-3" dir="rtl">
 		<div class="header d-flex justify-content-center">
-			<a class=" p-3" href="">الرئيسية</a>	
-			<a class=" p-3" href="">الملفات</a>
+			<a class=" p-3" href="{% url 'home' %}">الرئيسية</a>	
+			<a class=" p-3" href="{% url 'school-year' 1 %}">الملفات</a>
 			<a class=" p-3" href="">لائحة المتميزين</a>			
 		</div>
 	</nav>
@@ -24,7 +24,7 @@
 
  
 {% block js %}
-<script src="{% static 'js/bootstrap.bundle.min.js' %}" />
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
 {% endblock js%}
     
