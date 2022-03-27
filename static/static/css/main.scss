@@ -118,3 +118,18 @@ h1 {
   }
 
 }
+
+
+.accordion-button {
+  color: #fff !important;
+  background-color:rgba(0,0,0,0.3)!important;
+  border: 0;
+
+  &:not(.collapsed) {
+    border: solid 1px #dc3545;
+  }   
+}
+.accordion-item {
+  background:transparent;
+  border:solid 1px #dc3545;
+}

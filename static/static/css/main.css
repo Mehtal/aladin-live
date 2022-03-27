@@ -112,5 +112,18 @@ h1 {
 .header a:hover, .header a:focus, .header a:active {
   color: #dc3545 !important;
 }
+.accordion-button {
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 0;
+}
+.accordion-button:not(.collapsed) {
+  border: solid 1px #dc3545;
+}
+
+.accordion-item {
+  background: transparent;
+  border: solid 1px #dc3545;
+}
 
 /*# sourceMappingURL=main.css.map */
