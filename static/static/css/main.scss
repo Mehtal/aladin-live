@@ -6,6 +6,12 @@
   font-family: arabicFontBold;
   src: url(../fonts/NotoNaskhArabic-Bold.ttf);
 }
+h1 h2 h3 h4 h5 h6 {
+  font-family: arabicFontBold;
+}
+body {
+  font-family: arabicFont;
+}
 h1 {
 	font-size:calc(3em + 4vw);
 }
@@ -125,6 +131,11 @@ h1 {
   background-color:rgba(0,0,0,0.3)!important;
   border: 0;
 
+  &:hover{
+    background: #0c63e4 !important;
+    cursor: pointer;
+  }
+
   &:not(.collapsed) {
     border: solid 1px #dc3545;
   }   
@@ -132,4 +143,11 @@ h1 {
 .accordion-item {
   background:transparent;
   border:solid 1px #dc3545;
+}
+.accordion-body {
+  p a {
+    &:hover {
+      color:#0c63e4 !important;
+    }
+  }
 }
