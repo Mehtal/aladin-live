@@ -6,11 +6,11 @@
 <div class="text-center text-white display-2 mt-5">{{ object.name}}</div><hr>
 <h2 class="text-center text-white mb-5">تحميل مواضيع الاختبارات مع التصحيح</h2>
 
-<div class="accordion " id="accordionExames">
+<div class="accordion " id="accordionExames" dir="rtl">
   {% for niveau in object.niveaus.all %}
   <div class="accordion-item mb-3">
     <h2 class="accordion-header text-center" id="heading{{ niveau.id}}">
-      <button class="accordion-button text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ niveau.id}}" aria-expanded="true" aria-controls="collapse{{ niveau.id}}">
+      <button class="accordion-button text-center d-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ niveau.id}}" aria-expanded="true" aria-controls="collapse{{ niveau.id}}">
        <strong>{{ niveau.name}}</strong> 
       </button>
     </h2>
