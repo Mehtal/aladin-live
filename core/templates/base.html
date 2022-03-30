@@ -16,7 +16,7 @@
 		<div class="header d-flex justify-content-center">
 			<a class=" p-3" href="{% url 'home' %}">الرئيسية</a>	
 			<a class=" p-3" href="{% url 'school-year' 1 %}">الملفات</a>
-			<a class=" p-3" href="">لائحة المتميزين</a>			
+			<a class=" p-3" href="{% url 'ranking' %}">لائحة المتميزين</a>			
 		</div>
 	</nav>
   {% block content %}

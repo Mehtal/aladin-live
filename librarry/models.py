@@ -75,3 +75,13 @@ class Exames(models.Model):
 
     def __str__(self):
         return f'{self.niveau} - {self.title}'
+
+
+class Ranking(models.Model):
+    full_name = models.CharField(max_length=40)
+    mark = models.DecimalField(max_digits=5, decimal_places=2)
+    niveau = models.ForeignKey(
+        Niveau, on_delete=models.CASCADE, related_name="student_rank")
+
+    def __str__(self):
+        return f'{self.niveau} {self.full_name} {self.mark}'

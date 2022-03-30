@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+	{% if primary.count > 0 %} 
+	
+<div class="row my-5">
+<div class="text-white p-3" style="background:rgba(13, 110, 253, 0.5)" dir="rtl">
+			<table class="table table-borderless text-white">
+				<colgroup>
+    <col width="50%"/>
+    <col width="25%"/>
+    <col width="25%"/>
+  </colgroup>
+  <thead>
+    <tr>
+      
+      <th scope="col">الإسم </th>
+      <th scope="col">العلامة</th>
+      <th class="text-start"scope="col">المستوى</th>
+    </tr>
+  </thead>
+  <tbody>
+  	      {% for obj in primary %}
+  		  
+    <tr >
+      <td class="py-3">{{ obj.full_name }}</td>
+      <td class="py-3">{{obj.mark}}</td>
+      <td class="text-start text-warning py-3"><span class="p-2" style="border-radius: 50%;border:1px solid #ffc107">{{ obj.niveau}}</span></td>
+    </tr>
+   
+	{% endfor %}
+    
+  </tbody>
+</table>
+		</div>
+</div>
+{% endif %}
+	{% if college.count > 0 %}
+<div class="row my-5">
+<div class="text-white p-3" style="background:rgba(220, 53, 69, 0.5)" dir="rtl">
+			<table class="table table-borderless text-white">
+				<colgroup>
+    <col width="50%"/>
+    <col width="25%"/>
+    <col width="25%"/>
+  </colgroup>
+  <thead>
+    <tr>
+      
+      <th scope="col">الإسم </th>
+      <th scope="col">العلامة</th>
+      <th class="text-start"scope="col">المستوى</th>
+    </tr>
+  </thead>
+  <tbody>
+  	      {% for obj in college %}
+  		
+    <tr >
+      <td class="py-3">{{ obj.full_name }}</td>
+      <td class="py-3">{{obj.mark}}</td>
+      <td class="text-start text-warning py-3"><span class="p-2" style="border-radius: 50%;border:1px solid #ffc107">{{ obj.niveau}}</span></td>
+    </tr>
+  
+	{% endfor %}
+    
+  </tbody>
+</table>
+		</div>
+</div>
+{% endif %}
+	{% if high.count > 0 %}
+<div class="row my-5">
+<div class="text-white p-3" style="background:rgba(220, 53, 69, 0.5)" dir="rtl">
+			<table class="table table-borderless text-white">
+				<colgroup>
+    <col width="50%"/>
+    <col width="25%"/>
+    <col width="25%"/>
+  </colgroup>
+  <thead>
+    <tr>
+      
+      <th scope="col">الإسم </th>
+      <th scope="col">العلامة</th>
+      <th class="text-start" scope="col">المستوى</th>
+    </tr>
+  </thead>
+  <tbody>
+  	      {% for obj in high %}
+  		  
+    <tr >
+      <td class="py-3">{{ obj.full_name }}</td>
+      <td class="py-3">{{obj.mark}}</td>
+      <td class="text-start text-warning py-3"><span class="p-2" style="border-radius: 50%;border:1px solid #ffc107">{{ obj.niveau}}</span></td>
+    </tr>
+  
+	{% endfor %}
+    
+  </tbody>
+</table>
+		</div>
+</div>
+{% endif %}
+</div>
+
+{% endblock %}
