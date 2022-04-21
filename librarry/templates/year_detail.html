@@ -15,7 +15,7 @@
       </button>
     </h2>
     <div id="collapse{{niveau.id}}" class="accordion-collapse collapse show" aria-labelledby="heading{{ niveau.id}}" data-bs-parent="#accordionExames">
-      <div class="accordion-body">{% for exame in niveau.exames.all %}
+      <div style="font-size: calc(1.5rem + 1vw);" class="accordion-body">{% for exame in niveau.exames.all %}
        <p><a href="{{ exame.upload.url }}" class="text-white">{{exame.title}}</a></p>
        <hr>
         {% endfor %}
